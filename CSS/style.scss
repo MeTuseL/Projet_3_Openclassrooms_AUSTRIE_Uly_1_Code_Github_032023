@@ -11,6 +11,16 @@ body {
     border-top-width: thick;
 }
 
+// colours
+$pink : #FF79DA ;
+$light-pink : #f5edff;
+$purple : #9356DC ;
+$light-green : #99E2D0 ; 
+$green : #367e68 ;
+$gray : #eaeaea ;
+$light-gray : #f7f7f7 ; 
+$black : #353535 ; 
+
 // link
 ul {
     padding: 0px;
@@ -38,7 +48,7 @@ input,
 button {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    color: #353535;
+    color: $black;
 }
 
 h1,
@@ -56,7 +66,6 @@ h2 {
     font-size: 23px;
     font-weight: 700;
 }
-
 // card - box shadow 
 .container-section-2__card,
 .container-section-1__main button,
@@ -109,7 +118,7 @@ h2 {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    background-color: #eaeaea;
+    background-color: $gray;
     padding: 5px;
 }
 
@@ -117,7 +126,7 @@ h2 {
     border-radius: 5px;
     border: none;
     padding: 0px 0px 0px 5px;
-    background-color: #eaeaea;
+    background-color: $gray;
     height: 45px;
     width: 135px;
 }
@@ -125,13 +134,13 @@ h2 {
 .container-section-1__form input::placeholder {
     font-size: 14px;
     font-weight: 500;
-    background-color: #eaeaea;
-    color: #353535;
+    background-color: $gray;
+    color: $black;
 }
 
 .container-section-1__main {
     padding: 40px;
-    background-color: #f7f7f7;
+    background-color: $light-gray;
     text-align: center;
 }
 
@@ -155,7 +164,7 @@ h2 {
     font-weight: 400;
     margin-top: 12px;
     padding: 15px 20px;
-    background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    background-image: linear-gradient(to bottom right, $pink, $purple);
 }
 
 // aside
@@ -169,16 +178,16 @@ h2 {
     display: flex;
     align-items: center;
     border-radius: 20px;
-    background-color: #f7f7f7;
+    background-color: $light-gray;
     width: 100%;
 }
 
 .container-aside__step:hover {
-    background-color: #f5edff;
+    background-color: $light-pink;
 }
 
 .container-aside__step:hover .container-aside__step__content i {
-    color: #9356DC;
+    color: $purple;
 }
 
 .container-aside__step__content {
@@ -198,7 +207,7 @@ h2 {
 }
 
 .container-aside__step__content span {
-    background-color: #9356DC;
+    background-color: $purple;
     color: white;
     margin-right: 15px;
     padding: 2px 7px;
@@ -216,7 +225,7 @@ h2 {
     display: grid;
     grid-template-rows: 40px 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    background-color: #f7f7f7;
+    background-color: $light-gray;
 }
 
 .container-section-2__card {
@@ -236,13 +245,13 @@ h2 {
 
 .container-section-2__card__new {
     position: absolute;
-    background-color: #99E2D0;
+    background-color: $light-green;
     padding: 6px 15px;
     top: 15px;
     right: 15px;
     font-size: 13px;
     font-weight: 700;
-    color: #367e68;
+    color: $green;
 
 }
 
@@ -266,14 +275,14 @@ h2 {
     font-size: 23px;
 
 }
-// font size paragraph and link section2 - footer
+// font size link and paragraph footer - section
 .container-footer a,.container-section-2__card__content p{
     font-size: 15px;
     font-weight: 350;
 }
 // footer
 footer {
-    background-color: #353535;
+    background-color: $black;
     width: 100%;
 
 }
@@ -297,7 +306,7 @@ a {
 }
 
 .container-footer__nav a:hover {
-    color: #FF79DA;
+    color: $pink;
 }
 
 .container-footer__nav__link a {
