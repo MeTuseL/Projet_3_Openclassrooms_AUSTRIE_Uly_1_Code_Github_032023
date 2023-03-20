@@ -66,7 +66,7 @@ h2 {
 .container-section-1__main button,
 .container-aside__step {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: 0.3s;
+    transition: box-shadow 0.2s; 
 }
 
 .container-section-2__card:hover,
@@ -76,7 +76,7 @@ h2 {
 
 /* button - opacity - box shadow */
 .container-section-1__main button:hover {
-    opacity: 80%;
+    opacity: 0.8;
     box-shadow: 0 5px 8px rgb(0 0 0 / 40%);
 }
 
@@ -135,6 +135,10 @@ body {
         background-color: $gray;
         padding: 5px;
 
+        i {
+           padding-right: 5px;
+        }
+
         input {
             border-radius: 5px;
             border: none;
@@ -146,8 +150,10 @@ body {
             &::placeholder {
                 font-size: 14px;
                 font-weight: 500;
-                background-color: $gray;
                 color: $black;
+            }
+            &:focus {
+                background-color: $light-pink;
             }
         }
     }
@@ -202,7 +208,7 @@ body {
         &:hover {
             background-color: $light-pink;
 
-            .container-aside__step__content i {
+            i {
                 color: $purple;
             }
         }
@@ -287,13 +293,67 @@ body {
                 font-weight: 600;
                 margin-bottom: 5px;
             }
-
-            i {
+            
+            .heart{
+                position: relative;
                 color: gray;
                 font-size: 23px;
+                width: 23px;
+                height: 23px;
+                z-index: 0;
+                overflow: hidden;
 
-            }
+                &::before{
+                    position: absolute;
+                    content: "\f004";
+                    font-weight: 900;
+                    font-family: "Font Awesome 6 Free";
+                    color: rgba(255,0,0,1);
+                    font-size: 23px;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -1;
+                    top:23px;
+                    left: 0;
+                }
 
+                &:hover {
+                    color: rgba(255,0,0,1);
+
+                    &::before{
+                        transition: all 800ms;
+                        top: 0px;
+                    
+                    }
+                } 
+                &:active{
+                    color: rgba(255,0,0,0);
+
+                    &::before {
+                        top: 0px;
+                        color : rgb(189, 12, 65);
+                    } 
+                }
+
+                &::after{
+                    position: absolute;
+                    content: "\f004";
+                    font-weight: 900;
+                    font-family: "Font Awesome 6 Free";
+                    color : rgb(189, 12, 65);
+                    font-size: 23px;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -2;
+                    top:23px;
+                    left: 0;
+                }
+                &:hover::after{
+                    transition: 1s;
+                    top: 0px;
+                }    
+            } 
+            
         }
     }
 }
