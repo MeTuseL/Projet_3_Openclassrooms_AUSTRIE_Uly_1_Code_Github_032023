@@ -1,4 +1,5 @@
 /* colours */
+/* keyframes */
 /* link */
 ul,
 li {
@@ -275,44 +276,32 @@ body {
   content: "\f004";
   font-weight: 900;
   font-family: "Font Awesome 6 Free";
-  color: rgb(255, 0, 0);
   font-size: 23px;
+  opacity: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
-  top: 23px;
   left: 0;
+  transition: all 800ms;
 }
 .container-section-2__card__content .heart:hover {
-  color: rgb(255, 0, 0);
+  color: transparent;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 .container-section-2__card__content .heart:hover::before {
-  transition: all 800ms;
-  top: 0px;
-}
-.container-section-2__card__content .heart:active {
-  color: rgba(255, 0, 0, 0);
-}
-.container-section-2__card__content .heart:active::before {
-  top: 0px;
-  color: rgb(189, 12, 65);
-}
-.container-section-2__card__content .heart::after {
-  position: absolute;
-  content: "\f004";
-  font-weight: 900;
-  font-family: "Font Awesome 6 Free";
-  color: rgb(189, 12, 65);
-  font-size: 23px;
-  height: 100%;
-  width: 100%;
-  z-index: -2;
-  top: 23px;
-  left: 0;
-}
-.container-section-2__card__content .heart:hover::after {
-  transition: 1s;
-  top: 0px;
+  opacity: 1;
+  color: transparent;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 /* footer */

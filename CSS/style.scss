@@ -7,7 +7,9 @@ $green : #367e68;
 $gray : #eaeaea;
 $light-gray : #f7f7f7;
 $black : #353535;
+$color-linear-gradient: linear-gradient(to bottom right, $pink, $purple);
 
+/* keyframes */
 /* link */
 ul,
 li {
@@ -66,7 +68,7 @@ h2 {
 .container-section-1__main button,
 .container-aside__step {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: box-shadow 0.2s; 
+    transition: box-shadow 0.2s;
 }
 
 .container-section-2__card:hover,
@@ -136,7 +138,7 @@ body {
         padding: 5px;
 
         i {
-           padding-right: 5px;
+            padding-right: 5px;
         }
 
         input {
@@ -152,6 +154,7 @@ body {
                 font-weight: 500;
                 color: $black;
             }
+
             &:focus {
                 background-color: $light-pink;
             }
@@ -184,7 +187,7 @@ body {
             font-weight: 400;
             margin-top: 12px;
             padding: 15px 20px;
-            background-image: linear-gradient(to bottom right, $pink, $purple);
+            background-image: $color-linear-gradient;
         }
 
     }
@@ -293,8 +296,8 @@ body {
                 font-weight: 600;
                 margin-bottom: 5px;
             }
-            
-            .heart{
+
+            .heart {
                 position: relative;
                 color: gray;
                 font-size: 23px;
@@ -303,57 +306,41 @@ body {
                 z-index: 0;
                 overflow: hidden;
 
-                &::before{
+                &::before {
                     position: absolute;
                     content: "\f004";
                     font-weight: 900;
                     font-family: "Font Awesome 6 Free";
-                    color: rgba(255,0,0,1);
                     font-size: 23px;
+                    opacity: 0;
                     height: 100%;
                     width: 100%;
                     z-index: -1;
-                    top:23px;
                     left: 0;
+                    transition: all 800ms;
                 }
 
                 &:hover {
-                    color: rgba(255,0,0,1);
 
-                    &::before{
-                        transition: all 800ms;
-                        top: 0px;
-                    
-                    }
-                } 
-                &:active{
-                    color: rgba(255,0,0,0);
+                    color: transparent;
+                    background-image: $color-linear-gradient;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    -moz-background-clip: text;
+                    -moz-text-fill-color: transparent;
 
                     &::before {
-                        top: 0px;
-                        color : rgb(189, 12, 65);
-                    } 
+                        opacity: 1;
+                        color: transparent;
+                        background-image: $color-linear-gradient;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        -moz-background-clip: text;
+                        -moz-text-fill-color: transparent;
+                    }
                 }
 
-                &::after{
-                    position: absolute;
-                    content: "\f004";
-                    font-weight: 900;
-                    font-family: "Font Awesome 6 Free";
-                    color : rgb(189, 12, 65);
-                    font-size: 23px;
-                    height: 100%;
-                    width: 100%;
-                    z-index: -2;
-                    top:23px;
-                    left: 0;
-                }
-                &:hover::after{
-                    transition: 1s;
-                    top: 0px;
-                }    
-            } 
-            
+            }
         }
     }
 }
