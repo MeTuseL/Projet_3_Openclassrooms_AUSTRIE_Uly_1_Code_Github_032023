@@ -93,15 +93,29 @@ body {
 
 /* header */
 .container-header {
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0px 20px;
+}
+.container-header__logo {
   display: flex;
   justify-content: center;
-  /* header logo */
+  align-items: center;
+  width: 100%;
 }
-.container-header #container-header__logo {
+.container-header__logo #container-header__logo {
   margin: 10px;
   width: 150px;
   height: 30px;
+}
+.container-header a i {
+  font-size: 23px;
+}
+.container-header a:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s;
 }
 
 /* main */
@@ -172,6 +186,10 @@ body {
   padding: 15px 20px;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
+.container-section-1__main button:hover {
+  transform: scale(1.025);
+  transition: transform 0.3s;
+}
 
 /* aside */
 .container-aside {
@@ -232,6 +250,10 @@ body {
   position: relative;
   border-radius: 20px;
   height: 100%;
+}
+.container-section-2__card:hover {
+  transform: scale(1.025);
+  transition: transform 0.3s;
 }
 .container-section-2__card__image {
   -o-object-fit: cover;

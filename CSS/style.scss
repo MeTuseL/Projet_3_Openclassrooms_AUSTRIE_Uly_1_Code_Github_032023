@@ -103,18 +103,37 @@ body {
 
 /* header */
 .container-header {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0px 20px;
+    
+    &__logo{
+        display: flex;
+        justify-content: center;
+       align-items: center;
+       width: 100%;
 
-    /* header logo */
-    #container-header__logo {
+       #container-header__logo {
         margin: 10px;
         width: 150px;
         height: 30px;
 
     }
-
+    
+    }
+    a {
+        i{
+            font-size: 23px;
+            
+        }
+        &:hover{
+            transform: scale(1.15) ;
+            transition: transform 0.2s;
+        }
+    }
+    
 }
 
 /* main */
@@ -188,6 +207,11 @@ body {
             margin-top: 12px;
             padding: 15px 20px;
             background-image: $color-linear-gradient;
+
+            &:hover{
+                transform: scale(1.025) ;
+                transition: transform 0.3s;
+            }
         }
 
     }
@@ -258,12 +282,18 @@ body {
     grid-gap: 20px;
     background-color: $light-gray;
 
+    
     /* section 2 card */
     &__card {
         position: relative;
         border-radius: 20px;
         height: 100%;
 
+        &:hover{
+            transform: scale(1.025) ;
+            transition: transform 0.3s;
+        }
+        
         &__image {
             object-fit: cover;
             width: 100%;
