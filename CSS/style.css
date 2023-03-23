@@ -1,5 +1,4 @@
 /* colours */
-/* keyframes */
 /* link */
 ul,
 li {
@@ -8,8 +7,9 @@ li {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; /*chrome and safari */
+  -moz-tap-highlight-color: transparent; /*firefox */
+  -o-tap-highlight-color: transparent; /* opera */
 }
 
 li {
@@ -72,18 +72,75 @@ button {
   font-weight: 400;
 }
 
-/* card/button/step/dish - box shadow */
+/* keyframes */
+/* kerframes fade in menus */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* fade in animation */
+.container-section-3-menus__content__meal h3,
+*.container-section-3-menus__content__meal__list {
+  animation: fade-in 1s;
+  -moz-animation: fade-in 1s; /* firefox */
+  -webkit-animation: fade-in 1s; /* safari and chrome */
+  -o-animation: fade-in 1s; /* opera */
+  animation-fill-mode: backwards;
+}
+
+.container-section-3-menus__content__meal.entree-title h3 {
+  animation-delay: 0.6s;
+}
+.container-section-3-menus__content__meal.dish-title h3 {
+  animation-delay: 1.4s;
+}
+.container-section-3-menus__content__meal.dessert-title h3 {
+  animation-delay: 2.2s;
+}
+.container-section-3-menus__content__meal__list.entree__one {
+  animation-delay: 0.8s;
+}
+.container-section-3-menus__content__meal__list.entree__two {
+  animation-delay: 1s;
+}
+.container-section-3-menus__content__meal__list.entree__three {
+  animation-delay: 1.2s;
+}
+.container-section-3-menus__content__meal__list.dish__one {
+  animation-delay: 1.6s;
+}
+.container-section-3-menus__content__meal__list.dish__two {
+  animation-delay: 1.8s;
+}
+.container-section-3-menus__content__meal__list.dish__three {
+  animation-delay: 2s;
+}
+.container-section-3-menus__content__meal__list.dessert__one {
+  animation-delay: 2.4s;
+}
+.container-section-3-menus__content__meal__list.dessert__two {
+  animation-delay: 2.6s;
+}
+.container-section-3-menus__content__meal__list.dessert__three {
+  animation-delay: 2.8s;
+}
+
+/* card/button/step/meal - box shadow */
 .container-section-2__card,
 .container-aside__step,
 button,
-.container-section-3-menus__content__dish__list {
+.container-section-3-menus__content__meal__list {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: box-shadow 0.2s;
 }
 .container-section-2__card:hover,
 .container-aside__step:hover,
 button:hover,
-.container-section-3-menus__content__dish__list:hover {
+.container-section-3-menus__content__meal__list:hover {
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -92,16 +149,16 @@ button:hover {
   opacity: 0.8;
 }
 
-/* animation card/button/dish */
+/* animation card/button/meal */
 .container-section-2__card,
 button,
-.container-section-3-menus__content__dish__list {
+.container-section-3-menus__content__meal__list {
   transform: scale(1);
   transition: transform 0.2s;
 }
 .container-section-2__card:hover,
 button:hover,
-.container-section-3-menus__content__dish__list:hover {
+.container-section-3-menus__content__meal__list:hover {
   transform: scale(1.025);
 }
 
@@ -131,21 +188,25 @@ button:hover,
 .heart:hover {
   color: transparent;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text; /*chrome and safari */
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
+  -moz-background-clip: text; /* firefox */
   -moz-text-fill-color: transparent;
+  -o-background-clip: text; /* opera */
+  -o-text-fill-color: transparent;
 }
 .heart:hover::before {
   opacity: 1;
   color: transparent;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text; /*chrome and safari */
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
+  -moz-background-clip: text; /* firefox */
   -moz-text-fill-color: transparent;
+  -o-background-clip: text; /* opera */
+  -o-text-fill-color: transparent;
 }
 
 /* padding container in main */
@@ -364,7 +425,7 @@ body {
   top: 0;
 }
 .container-section-3-menus__content {
-  border-radius: 30px 30px 0 0;
+  border-radius: 35px 35px 0 0;
   z-index: 1;
 }
 .container-section-3-menus__content__title {
@@ -378,24 +439,24 @@ body {
   font-family: "Shrikhand", sans-serif;
   font-style: normal;
 }
-.container-section-3-menus__content__dish {
+.container-section-3-menus__content__meal {
   display: grid;
   grid-template-rows: 30px 1fr 1fr 1fr;
   gap: 15px;
   margin-top: 15px;
 }
-.container-section-3-menus__content__dish h3 {
+.container-section-3-menus__content__meal h3 {
   font-weight: 400;
   text-transform: uppercase;
   border-bottom: 3px solid #99E2D0;
   width: 40px;
 }
-.container-section-3-menus__content__dish__list {
+.container-section-3-menus__content__meal__list {
   background-color: white;
   border-radius: 15px;
   padding: 15px;
 }
-.container-section-3-menus__content__dish__list div {
+.container-section-3-menus__content__meal__list div {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -427,7 +488,7 @@ footer {
   position: relative;
   max-width: 768px;
   margin: auto;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
 }
 .container-footer h2,
 .container-footer a {
