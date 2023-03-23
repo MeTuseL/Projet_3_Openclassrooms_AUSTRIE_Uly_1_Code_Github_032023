@@ -17,9 +17,14 @@ li {
 
 a {
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent; /*chrome and safari */ 
-    -moz-tap-highlight-color: transparent; /*firefox */ 
-    -o-tap-highlight-color: transparent; /* opera */ 
+    -webkit-tap-highlight-color: transparent;
+    /*chrome and safari */
+    -moz-tap-highlight-color: transparent;
+    /*firefox */
+    -o-tap-highlight-color: transparent;
+    /* opera */
+    -ms-tap-highlight-color: transparent;
+    /* internet explorer */
 }
 
 li {
@@ -84,137 +89,160 @@ button {
 
 /* keyframes */
 
-/* kerframes fade in menus */
+/* fade in menus */
 @keyframes fade-in {
     0% {
-        opacity:0;
+        opacity: 0;
 
     }
-    100% {
-        opacity:1;
-    }
-}
-@-moz-keyframes fade-in { /* firefox */
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fade-in { /* safari and chrome */
-    0% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-@-o-keyframes fade-in { /* opera */
-    0% {
-        opacity:0;
-    }
+
     100% {
         opacity: 1;
     }
 }
 
-/* fade in animation */
-.container-section-3-menus__content__meal h3
-   ,*.container-section-3-menus__content__meal__list {
+@-moz-keyframes fade-in {
 
-        animation: fade-in 1s;
-        -moz-animation: fade-in 1s; /* firefox */
-        -webkit-animation: fade-in 1s; /* safari and chrome */
-        -o-animation: fade-in 1s; /* opera */
-        animation-fill-mode: backwards;
+    /* firefox */
+    0% {
+        opacity: 0;
     }
 
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-in {
+
+    /* safari and chrome */
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fade-in {
+
+    /* opera */
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fade-in {
+
+    /* internet explorer */
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+/* fade in animation */
+.container-section-3-menus__content__meal h3,
+*.container-section-3-menus__content__meal__list {
+
+    animation: fade-in 1s;
+    -moz-animation: fade-in 1s;
+    /* firefox */
+    -webkit-animation: fade-in 1s;
+    /* safari and chrome */
+    -o-animation: fade-in 1s;
+    /* opera */
+    -ms-animation: fade-in 1s;
+    /* internet explorer */
+    animation-fill-mode: backwards;
+}
+
 .container-section-3-menus__content__meal {
-     
+
     &.entree-title {
         h3 {
             animation-delay: 0.6s;
         }
 
     }
+
     &.dish-title {
         h3 {
             animation-delay: 1.4s;
         }
     }
+
     &.dessert-title {
         h3 {
             animation-delay: 2.2s;
         }
     }
+
     &__list {
 
-        &.entree{
+        &.entree {
             &__one {
                 animation-delay: 0.8s;
-            
+
             }
-            &__two{
+
+            &__two {
                 animation-delay: 1s;
-                 
+
             }
-            &__three{
+
+            &__three {
                 animation-delay: 1.2s;
-                
+
             }
         }
-        &.dish{
+
+        &.dish {
             &__one {
                 animation-delay: 1.6s;
-            
+
             }
-            &__two{
+
+            &__two {
                 animation-delay: 1.8s;
-                 
+
             }
-            &__three{
+
+            &__three {
                 animation-delay: 2s;
-                
+
             }
         }
-        
-        &.dessert{
-            
+
+        &.dessert {
+
             &__one {
                 animation-delay: 2.4s;
-            
+
             }
-            &__two{
+
+            &__two {
                 animation-delay: 2.6s;
-                 
+
             }
-            &__three{
+
+            &__three {
                 animation-delay: 2.8s;
-                
+
             }
-            
+
         }
 
     }
-}
-
-/* card/button/step/meal - box shadow */
-.container-section-2__card,
-.container-aside__step,
-button,
-.container-section-3-menus__content__meal__list {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: box-shadow 0.2s;
-
-    &:hover {
-        box-shadow: 0 5px 8px rgb(0 0 0 / 40%);
-    }
-}
-
-/* button - opacity */
-button:hover {
-    opacity: 0.8;
 }
 
 /* animation card/button/meal */
@@ -223,7 +251,7 @@ button,
 .container-section-3-menus__content__meal__list {
 
     transform: scale(1);
-    transition: transform 0.2s;
+    transition: transform 0.5s;
 
     &:hover {
         transform: scale(1.025);
@@ -251,35 +279,111 @@ button,
         width: 100%;
         z-index: -1;
         left: 0;
-        transition: all 800ms;
     }
 
-    &:hover {
+    &:hover,
+    &::before {
 
         color: transparent;
         background-image: $color-linear-gradient;
         background-clip: text;
-        -webkit-background-clip: text; /*chrome and safari */ 
-        -webkit-text-fill-color: transparent; 
-        -moz-background-clip: text; /* firefox */
+        -webkit-background-clip: text;
+        /*chrome and safari */
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        /* firefox */
         -moz-text-fill-color: transparent;
-        -o-background-clip: text; /* opera */
+        -o-background-clip: text;
+        /* opera */
         -o-text-fill-color: transparent;
+        -ms-background-clip: text;
+        /* internet explorer */
+        -ms-text-fill-color: transparent;
 
-        &::before {
-            opacity: 1;
-            color: transparent;
-            background-image: $color-linear-gradient;
-            background-clip: text;
-            -webkit-background-clip: text; /*chrome and safari */ 
-        -webkit-text-fill-color: transparent; 
-        -moz-background-clip: text; /* firefox */
-        -moz-text-fill-color: transparent;
-        -o-background-clip: text; /* opera */
-        -o-text-fill-color: transparent;
-        }
     }
 
+    &:hover::before {
+        animation: fade-in 0.8s;
+        animation-fill-mode: forwards;
+    }
+
+}
+
+/* animation green check */
+.container-section-3-menus__content__meal__list {
+
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-color: $light-green;
+        border-radius: 0px 15px 15px 0px;
+        height: 100%;
+        width: 20%;
+        z-index: 1;
+        right: -20%;
+        bottom: 0px;
+        transition: all 0.5s;
+
+    }
+
+    &::after {
+        position: absolute;
+        content: "\f058";
+        font-weight: bold;
+        font-family: "Font Awesome 6 Free";
+        font-size: 25px;
+        color: white;
+        z-index: 2;
+        right: -14%;
+        bottom: 35%;
+        transition: all 0.5s;
+    }
+
+    &:hover {
+
+        div {
+
+            p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            span {
+                white-space: nowrap;
+                transition: all 0.5s;
+                padding-right: 20%;
+            }
+        }
+
+        &::before {
+            right: 0%;
+        }
+
+        &::after {
+            right: 6%;
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/* card/button/step/meal - box shadow */
+.container-section-2__card,
+.container-aside__step,
+button,
+.container-section-3-menus__content__meal__list {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &:hover {
+        box-shadow: 0 5px 8px rgb(0 0 0 / 40%);
+    }
+}
+
+/* button - opacity */
+button:hover {
+    opacity: 0.8;
 }
 
 /* padding container in main */
@@ -564,11 +668,10 @@ body {
             }
 
             &__list {
-
+                position: relative;
                 background-color: white;
                 border-radius: 15px;
                 padding: 15px;
-
 
                 div {
                     display: flex;

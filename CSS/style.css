@@ -7,9 +7,14 @@ li {
 
 a {
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent; /*chrome and safari */
-  -moz-tap-highlight-color: transparent; /*firefox */
-  -o-tap-highlight-color: transparent; /* opera */
+  -webkit-tap-highlight-color: transparent;
+  /*chrome and safari */
+  -moz-tap-highlight-color: transparent;
+  /*firefox */
+  -o-tap-highlight-color: transparent;
+  /* opera */
+  -ms-tap-highlight-color: transparent;
+  /* internet explorer */
 }
 
 li {
@@ -73,7 +78,7 @@ button {
 }
 
 /* keyframes */
-/* kerframes fade in menus */
+/* fade in menus */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -86,9 +91,14 @@ button {
 .container-section-3-menus__content__meal h3,
 *.container-section-3-menus__content__meal__list {
   animation: fade-in 1s;
-  -moz-animation: fade-in 1s; /* firefox */
-  -webkit-animation: fade-in 1s; /* safari and chrome */
-  -o-animation: fade-in 1s; /* opera */
+  -moz-animation: fade-in 1s;
+  /* firefox */
+  -webkit-animation: fade-in 1s;
+  /* safari and chrome */
+  -o-animation: fade-in 1s;
+  /* opera */
+  -ms-animation: fade-in 1s;
+  /* internet explorer */
   animation-fill-mode: backwards;
 }
 
@@ -129,32 +139,12 @@ button {
   animation-delay: 2.8s;
 }
 
-/* card/button/step/meal - box shadow */
-.container-section-2__card,
-.container-aside__step,
-button,
-.container-section-3-menus__content__meal__list {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: box-shadow 0.2s;
-}
-.container-section-2__card:hover,
-.container-aside__step:hover,
-button:hover,
-.container-section-3-menus__content__meal__list:hover {
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* button - opacity */
-button:hover {
-  opacity: 0.8;
-}
-
 /* animation card/button/meal */
 .container-section-2__card,
 button,
 .container-section-3-menus__content__meal__list {
   transform: scale(1);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
 }
 .container-section-2__card:hover,
 button:hover,
@@ -183,30 +173,92 @@ button:hover,
   width: 100%;
   z-index: -1;
   left: 0;
-  transition: all 800ms;
 }
-.heart:hover {
+.heart:hover, .heart::before {
   color: transparent;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   background-clip: text;
-  -webkit-background-clip: text; /*chrome and safari */
+  -webkit-background-clip: text;
+  /*chrome and safari */
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text; /* firefox */
+  -moz-background-clip: text;
+  /* firefox */
   -moz-text-fill-color: transparent;
-  -o-background-clip: text; /* opera */
+  -o-background-clip: text;
+  /* opera */
   -o-text-fill-color: transparent;
+  -ms-background-clip: text;
+  /* internet explorer */
+  -ms-text-fill-color: transparent;
 }
 .heart:hover::before {
-  opacity: 1;
-  color: transparent;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  background-clip: text;
-  -webkit-background-clip: text; /*chrome and safari */
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text; /* firefox */
-  -moz-text-fill-color: transparent;
-  -o-background-clip: text; /* opera */
-  -o-text-fill-color: transparent;
+  animation: fade-in 0.8s;
+  animation-fill-mode: forwards;
+}
+
+/* animation green check */
+.container-section-3-menus__content__meal__list {
+  overflow: hidden;
+}
+.container-section-3-menus__content__meal__list::before {
+  position: absolute;
+  content: "";
+  background-color: #99E2D0;
+  border-radius: 0px 15px 15px 0px;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  right: -20%;
+  bottom: 0px;
+  transition: all 0.5s;
+}
+.container-section-3-menus__content__meal__list::after {
+  position: absolute;
+  content: "\f058";
+  font-weight: bold;
+  font-family: "Font Awesome 6 Free";
+  font-size: 25px;
+  color: white;
+  z-index: 2;
+  right: -14%;
+  bottom: 35%;
+  transition: all 0.5s;
+}
+.container-section-3-menus__content__meal__list:hover div p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container-section-3-menus__content__meal__list:hover div span {
+  white-space: nowrap;
+  transition: all 0.5s;
+  padding-right: 20%;
+}
+.container-section-3-menus__content__meal__list:hover::before {
+  right: 0%;
+}
+.container-section-3-menus__content__meal__list:hover::after {
+  right: 6%;
+  transform: rotate(360deg);
+}
+
+/* card/button/step/meal - box shadow */
+.container-section-2__card,
+.container-aside__step,
+button,
+.container-section-3-menus__content__meal__list {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.container-section-2__card:hover,
+.container-aside__step:hover,
+button:hover,
+.container-section-3-menus__content__meal__list:hover {
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* button - opacity */
+button:hover {
+  opacity: 0.8;
 }
 
 /* padding container in main */
@@ -452,6 +504,7 @@ body {
   width: 40px;
 }
 .container-section-3-menus__content__meal__list {
+  position: relative;
   background-color: white;
   border-radius: 15px;
   padding: 15px;
