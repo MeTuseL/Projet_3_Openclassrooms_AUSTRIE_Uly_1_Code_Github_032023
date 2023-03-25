@@ -147,7 +147,7 @@ button {
 
 }
 
-/* fade in animation */
+/* fade in animation menus */
 .container-section-3-menus__content__meal h3,
 *.container-section-3-menus__content__meal__list {
 
@@ -200,6 +200,10 @@ button {
             &__three {
                 animation-delay: 1.2s;
 
+            }
+
+            &__four {
+                animation-delay: 1.3s;
             }
         }
 
@@ -255,7 +259,7 @@ button,
     }
 }
 
-/* animation spiner loader and fade-in body */
+/* animation fade-in body welcome */
 
 .fadein-body :not(.spiner-loader, .spiner-loader__spin, .spiner-loader__icon, .spiner-loader__icon__one, .spiner-loader__icon__two, .spiner-loader__icon__three) {
     animation: fade-in 4s ease-out, visibility-body 3s;
@@ -266,14 +270,85 @@ button,
         pointer-events: none;
         visibility: hidden;
     }
-    50%{
+
+    50% {
         visibility: hidden;
     }
+
     100% {
         pointer-events: none;
-   }
+    }
 }
 
+@-webkit-keyframes visibility-body {
+
+    /*chrome and safari */
+    0% {
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        pointer-events: none;
+    }
+}
+
+@-moz-keyframes visibility-body {
+
+    /* Firefox */
+    0% {
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        pointer-events: none;
+    }
+}
+
+@-o-keyframes visibility-body {
+
+    /* opera */
+    0% {
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        pointer-events: none;
+    }
+}
+
+@-ms-keyframes visibility-body {
+
+    /* internet explorer */
+    0% {
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: hidden;
+    }
+
+    100% {
+        pointer-events: none;
+    }
+}
+
+/* animation spiner loader */
 .spiner-loader {
     position: fixed;
     max-width: 768px;
@@ -340,14 +415,15 @@ button,
             -ms-text-fill-color: transparent;
 
         }
+
         &__one {
             animation: opacity1 1.5s linear 2 forwards;
         }
-        
+
         &__two {
             animation: opacity2 1.5s linear 2 forwards;
         }
-        
+
         &__three {
             animation: opacity3 1.5s linear 2 forwards;
         }
@@ -991,6 +1067,13 @@ button,
 
     &:hover {
 
+        h4 {
+            width: 85%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         div {
 
             p {
@@ -1287,8 +1370,14 @@ body {
     }
 
     &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
         border-radius: 35px 35px 0 0;
+        padding: 40px 20px 0px 20px;
         z-index: 1;
+        background-color: $light-gray;
 
         &__title {
             display: flex;
