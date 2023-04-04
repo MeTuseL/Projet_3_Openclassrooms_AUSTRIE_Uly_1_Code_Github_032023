@@ -418,8 +418,8 @@ button,
 
     &__spin {
         position: absolute;
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
         border-radius: 50%;
         animation: rotate 1s 3 linear;
 
@@ -445,8 +445,8 @@ button,
 
     &__icon {
         position: absolute;
-        width: 100px;
-        height: 100px;
+        width: 125px;
+        height: 125px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1207,10 +1207,10 @@ body {
             font-size: 23px;
             transform: scale(1);
             transition: transform 0.2s;
-        }
 
-        &:hover {
-            transform: scale(1.15);
+            &:hover {
+                transform: scale(1.15);
+            }
         }
     }
 
@@ -1429,15 +1429,17 @@ body {
 
         &__meal {
             display: grid;
-            grid-template-rows: 30px 1fr 1fr 1fr;
             gap: 15px;
             margin-top: 15px;
 
-            h3 {
-                font-weight: 400;
-                text-transform: uppercase;
-                border-bottom: 3px solid $light-green;
-                width: 40px;
+            &__title {
+                h3 {
+                    font-weight: 400;
+                    line-height: 30px;
+                    text-transform: uppercase;
+                    border-bottom: 3px solid $light-green;
+                    width: 40px;
+                }
             }
 
             &__list {
@@ -1577,18 +1579,21 @@ footer {
     /*section menus */
     .container-section-3-menus {
 
-        &__meal {
+        &__content {
 
-            &__list {
+            &__meal {
+                grid-template-rows: 30px 1fr 1fr 1fr;
 
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    flex-wrap: nowrap;
+                &__list {
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                    }
+
                 }
-
             }
-
         }
     }
 
@@ -1650,23 +1655,34 @@ footer {
     /*section menus */
     .container-section-3-menus {
 
-        &__meal {
+        &__empty {
+            height: 275px;
+    
+            &__image {
+                height: 300px;
+            }
+        }
+        &__content {
 
-            &__list {
+            &__meal {
 
-                div {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
+                grid-template-rows: 30px 1fr 1fr 1fr;
 
-                    h4 {
-                        margin-right: 20px;
+                &__list {
+
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+
+                        h4 {
+                            margin-right: 20px;
+                        }
+
                     }
 
                 }
-
             }
-
         }
 
     }
@@ -1680,4 +1696,85 @@ footer {
 
 /*desktop version */
 
-@media screen and (min-width:1024px) {}
+@media screen and (min-width:1024px) {
+
+    /*spiner loader*/
+    .spiner-loader {
+        max-width: 1440px;
+    }
+
+    /* body */
+    .container-body {
+        max-width: 1440px;
+    }
+
+    /* main */
+    .container-main {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 36% 1fr;
+        gap: 20px;
+
+    }
+
+    /* section 2 - welcome and menus*/
+    .grid-section-2 {
+        grid-row: 1/3;
+        grid-column: 2/3;
+    }
+
+    .container-section-2 {
+        display: grid;
+        grid-template-rows: 40px 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+
+        h2 {
+            grid-column: 1 / 3;
+        }
+    }
+
+    /*section menus */
+    .container-section-3-menus {
+        min-height: 100vh;
+
+        &__empty {
+            height: 375px;
+    
+            &__image {
+               height: 400px;
+            }
+        }
+        &__content {
+
+            &__meal {
+
+                grid-template-columns: 80px 1fr 1fr 1fr;
+
+                &__title {
+                    display: flex;
+                    align-items: center;
+                    grid-row: 1/3;
+                }
+
+                &__list {
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    /* footer - welcome and menus */
+
+    .container-footer {
+        max-width: 1440px;
+    }
+}
