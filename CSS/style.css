@@ -583,8 +583,8 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  left: 10px;
-  width: 65%;
+  left: -10px;
+  width: 100%;
 }
 .container-aside__step__content span {
   background-color: #9356DC;
@@ -881,10 +881,6 @@ footer {
   }
   .container-aside h2 {
     grid-column: 1/4;
-  }
-  .container-aside__step__content {
-    left: -10px;
-    width: 100%;
   }
   /* section 2 - homepage and menus*/
   .container-section-2 {
